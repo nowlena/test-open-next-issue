@@ -1,0 +1,41 @@
+{
+  "name": "sst-open-next-issue",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/**"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "clean": "turbo run clean && rm -rf .turbo && rm -rf node_modules && rm -rf /tmp/turbod",
+    "dev": "dotenv -- turbo run dev",
+    "deploy:staging": "dotenv -e .env.staging -- turbo run deploy:staging",
+    "remove:dev": "dotenv -- turbo run remove:dev",
+    "remove:staging": "dotenv -e .env.staging -- turbo run remove:staging",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.0.2",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "aws-cdk-lib": "2.84.0",
+    "constructs": "10.1.156",
+    "dotenv-cli": "^7.2.1",
+    "eslint": "^8.44.0",
+    "eslint-config-next": "^13.4.9",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-turbo": "^1.10.7",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "latest",
+    "sst": "^2.19.2",
+    "turbo": "^1.10.7",
+    "typescript": "^5.1.6"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "packageManager": "pnpm@8.6.6"
+}

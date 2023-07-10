@@ -1,0 +1,30 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalEnv": ["NODE_ENV"],
+  "globalDependencies": ["**/.env.*local", ".env", ".env.staging"],
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**"]
+    },
+    "lint": {
+      "outputs": []
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "deploy:staging": {
+      "cache": false
+    },
+    "remove:dev": {
+      "cache": false
+    },
+    "remove:staging": {
+      "cache": false
+    },
+    "clean": {
+      "cache": false
+    }
+  }
+}
