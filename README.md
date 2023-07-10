@@ -23,18 +23,18 @@ TypeError: Cannot read properties of null (reading 'useCallback')
 
 ## Development
 
-**note**: no issue occurs in local development
+**note**: no issue will occur in local development
 
 1. Clone the repo
-2. review `sst.config.ts` to ensure the dev and staging profiles align with your `~/.aws/credentials` file
+2. Review `sst.config.ts` to ensure the dev and staging profiles align with your `~/.aws/credentials` file
 3. Run `pnpm install`
 4. Run `pnpm run dev`
 
 ## Deploy Staging
 
-**note**: the issue does occur when deployed, aka within staging
+**note**: the issue will occur when deployed (aka within staging)
 
 1. Clone the repo
-2. review `sst.config.ts` to ensure the dev and staging profiles align with your `~/.aws/credentials` file
+2. Review `sst.config.ts` to ensure the dev and staging profiles align with your `~/.aws/credentials` file
 3. Run `pnpm install`
 4. Run `pnpm run deploy:staging`
