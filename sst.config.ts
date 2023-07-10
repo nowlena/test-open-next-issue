@@ -2,9 +2,11 @@ import type { SSTConfig } from 'sst';
 
 import { Web } from './packages/infra/stacks/src';
 
+/**
+ * reference the correct " ~/.aws/credentials " profile (use the same AWS account if you'd like for all stages!)
+ */
 const PROFILE: Record<string, string> = {
   staging: 'staging',
-  production: 'production',
   default: 'default',
 };
 
