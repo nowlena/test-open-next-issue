@@ -30,5 +30,11 @@ export const getCountry = async (args: GetCountryArgs) => {
     },
   });
 
-  return country;
+  // so that we can see revalidations in action
+  const now = new Date().toISOString();
+
+  return {
+    now,
+    ...country,
+  };
 };

@@ -52,7 +52,7 @@ export const typedQuery = async <Query extends QueryGenqlSelection>(
       throw new Error(errorMessage ?? 'Something went wrong');
     }
 
-    return { data, errors };
+    return { data };
   } catch (error) {
     console.log('GraphQL - Uncaught error ', error);
     throw new Error(getErrorMessage(error));
