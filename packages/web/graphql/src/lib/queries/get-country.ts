@@ -2,7 +2,7 @@ import type { TypedQueryOpts } from '../utils';
 
 import { typedQuery } from '../utils';
 
-export type GetUserResponse = Awaited<ReturnType<typeof getCountry>>;
+export type GetCountryResponse = Awaited<ReturnType<typeof getCountry>>;
 
 export type GetCountryArgs = {
   code: string;
@@ -13,6 +13,7 @@ export type GetCountryArgs = {
 export const getCountry = async (args: GetCountryArgs) => {
   const {
     data: { country },
+    now,
   } = await typedQuery({
     next: args?.next,
     cache: args?.cache,
@@ -30,11 +31,5 @@ export const getCountry = async (args: GetCountryArgs) => {
     },
   });
 
-  // so that we can see revalidations in action
-  const now = new Date().toISOString();
-
-  return {
-    now,
-    ...country,
-  };
+  return { now, country };
 };

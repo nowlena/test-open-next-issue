@@ -14,7 +14,7 @@ export type QueryError = {
 };
 
 export type QueryResponse<Query extends QueryGenqlSelection> = Prettify<{
-  data: QueryResult<Query>;
+  data: QueryResult<Query> & { now: string };
   errors?: QueryError[];
 }>;
 
@@ -52,7 +52,13 @@ export const typedQuery = async <Query extends QueryGenqlSelection>(
       throw new Error(errorMessage ?? 'Something went wrong');
     }
 
-    return { data };
+    // so that we can see revalidations in action
+    const now = new Date().toISOString();
+
+    return {
+      data,
+      now,
+    };
   } catch (error) {
     console.log('GraphQL - Uncaught error ', error);
     throw new Error(getErrorMessage(error));
