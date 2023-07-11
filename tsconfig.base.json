@@ -25,7 +25,8 @@
     "baseUrl": ".",
     "paths": {
       "~/config/tsconfig/*": ["packages/config/tsconfig/*"],
-      "~/infra/stacks": ["packages/infra/stacks/src/index.ts"]
+      "~/infra/stacks": ["packages/infra/stacks/src/index.ts"],
+      "~/web/graphql": ["packages/web/graphql/src/index.ts"]
     }
   },
   "exclude": ["node_modules"]

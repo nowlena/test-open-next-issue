@@ -8,9 +8,17 @@ type LayoutProps = {
 
 const links = [
   { label: 'Home', href: '/' },
-  { label: 'Request', href: '/request' },
-  { label: 'Route Group', href: '/route-group' },
-  { label: 'Route Group (Request)', href: '/route-group-request' },
+  { label: 'Request No Cache', href: '/request-no-cache' },
+  { label: 'Request Reval 3 Secs', href: '/request-reval-3' },
+  { label: 'Route Group: Static', href: '/route-group-static' },
+  {
+    label: 'Route Group: Request No Cache',
+    href: '/route-group-request-no-cache',
+  },
+  {
+    label: 'Route Group: Request Reval 3',
+    href: '/route-group-request-reval-3',
+  },
 ];
 
 const RootLayout = ({ children }: LayoutProps) => (
